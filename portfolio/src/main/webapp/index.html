@@ -13,6 +13,21 @@
       <a href="https://github.com/Juliahi123?tab=repositories" align="middle">link to Github</a>     
       <a href="https://www.linkedin.com/in/rui-rena-wu-308a591a8" align="middle">link to LinkedIn</a>  
       <p><b>This is my portfolio</b></p>
+      <button onclick="addRandomGreeting();">
+        Hello!
+      </button>
+      <p id="greeting-container"></p>
+      <button onclick="showServerTime();">
+        Get date
+      </button>
+      <p id="date-container"></p>
+      <form action="/text" method="POST">
+        <p>Please enter your name! </p>
+        <textarea name="text-input">Rui Wu</textarea>
+        <br/>
+        <input type="submit" />
+      </form>
+      
       <p>Hi! I am currently a student from UCSD major in the computer science.</p> 
       <p>I like to explore new things in my life and I like video editing a lot.</p>
       <p><b>Project List:</b></p>
@@ -32,6 +47,15 @@
       <p>UCSD Library :: Geisel Library </p>
       <img src="1/library.jpg" style="float:left;width:620px;height:420px;"/>    
       <br>
+      <h3>Interesting information</h3>
+      <p>Click <a href="/page-views">here</a> to see how many times does this page been review.</p>
+      <p>Click <a href="/server-stats">here</a> to see the server response directly.</p>
     </div>
+    <form action="/redirect" method="POST">
+        <p>Want to go somewhere else? Enter the address below! </p>
+        <textarea name="address">gmail.com</textarea>
+        <br/>
+        <input type="submit" />
+    </form>
   </body>
 </html>
