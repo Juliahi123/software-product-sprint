@@ -22,12 +22,13 @@
       </button>
       <p id="date-container"></p>
       <form action="/text" method="POST">
-        <p>Please enter your name! </p>
+        <p>Please enter your name in the box: </p>
         <textarea name="text-input">Rui Wu</textarea>
         <br/>
         <input type="submit" />
       </form>
-      
+
+ 
       <p>Hi! I am currently a student from UCSD major in the computer science.</p> 
       <p>I like to explore new things in my life and I like video editing a lot.</p>
       <p><b>Project List:</b></p>
@@ -50,6 +51,19 @@
       <h3>Interesting information</h3>
       <p>Click <a href="/page-views">here</a> to see how many times does this page been review.</p>
       <p>Click <a href="/server-stats">here</a> to see the server response directly.</p>
+      <h3>Try the translation API!</h3>
+      <p>Type a message and select a language, then click submit to translate it.</p>
+      <textarea id="text"></textarea>
+    <select id="language">
+      <option value="es">English</option>
+      <option value="zh">Chinese</option>
+      <option value="es">Spanish</option>
+      <option value="hi">Hindi</option>
+      <option value="ar">Arabic</option>
+    </select>
+    <button onclick="requestTranslation();">Translate</button>
+    <hr/>
+    <div id="result"></div>
     </div>
     <form action="/redirect" method="POST">
         <p>Want to go somewhere else? Enter the address below! </p>
@@ -57,5 +71,25 @@
         <br/>
         <input type="submit" />
     </form>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <h3>Leave an image here:</h3>
+        <input type="file" name="image">
+        <br/>
+        <p>Click <button>Submit</button> to submit image </p>
+      </form>
+      <p><a href="/list-images">Click here to see all of the uploaded images!</a></p>
+      <form action="/delete-image" method="POST">
+    <p>Click  <button> delete</button> to deleted all uploaded image</p>
+    </form>
   </body>
+  <body onload="loadTasks()">
+    <h3>Reminder</h3>
+    <form method="POST" action="/new-task">
+      <input type="text" name="title" />
+      <button>Submit</button>
+    </form>
+    <hr/>
+    <ul id="task-list"></ul>
+  </body>
+  
 </html>
