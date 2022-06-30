@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 import com.google.sps.Data.ServerStats;
-
+// Record the data of the website and output it into the new page such that user can take
+// a look of it
 @WebServlet("/server-stats")
 public final class ServerStatsServlet extends HttpServlet {
 

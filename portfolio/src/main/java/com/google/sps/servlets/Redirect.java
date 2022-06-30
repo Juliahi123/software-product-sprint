@@ -1,13 +1,12 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
-import java.lang.module.ResolutionException;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+// Ask for user input and redirect the user to the requested webstie, e.g: google.com
 @WebServlet("/redirect")
 public class Redirect extends HttpServlet {
 

@@ -1,13 +1,12 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
-import java.util.Arrays;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Servlet that processes text. */
+/** Servlet that take user input and output the greeting message. */
 @WebServlet("/text")
 public final class TextProcessorServlet extends HttpServlet {
 

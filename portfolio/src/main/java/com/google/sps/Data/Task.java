@@ -1,6 +1,6 @@
 package com.google.sps.Data;
 
-/** An item on a todo list. */
+/** An message on a todo list. */
 public final class Task {
 
   private final long id;

@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+// Use Google Translate API to do simply translation
 @WebServlet("/translate")
 public class TranslationServlet extends HttpServlet {
 

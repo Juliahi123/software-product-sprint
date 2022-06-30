@@ -29,22 +29,20 @@ function addRandomGreeting() {
 async function showServerTime() {
     const responseFromServer = await fetch('/date');
     const textFromResponse = await responseFromServer.text();
-  
     const dateContainer = document.getElementById('date-container');
     dateContainer.innerText = textFromResponse;
-  }
+}
 
-  function loadTasks() {
+function loadTasks() {
     fetch('/list-tasks').then(response => response.json()).then((tasks) => {
-      const taskListElement = document.getElementById('task-list');
-      tasks.forEach((task) => {
-        taskListElement.appendChild(createTaskElement(task));
-      })
+        const taskListElement = document.getElementById('task-list');
+        tasks.forEach((task) => {
+            taskListElement.appendChild(createTaskElement(task));})
     });
-  }
+}
   
-  /** Creates an element that represents a task, including its delete button. */
-  function createTaskElement(task) {
+/** Creates an element that represents a task, including its delete button. */
+function createTaskElement(task) {
     const taskElement = document.createElement('li');
     taskElement.className = 'task';
   
@@ -54,32 +52,25 @@ async function showServerTime() {
     const deleteButtonElement = document.createElement('button');
     deleteButtonElement.innerText = 'Delete';
     deleteButtonElement.addEventListener('click', () => {
-      deleteTask(task);
-  
-      // Remove the task from the DOM.
-      taskElement.remove();
+        deleteTask(task);
+        // Remove the task from the DOM.
+        taskElement.remove();
     });
   
     taskElement.appendChild(titleElement);
     taskElement.appendChild(deleteButtonElement);
     return taskElement;
-  }
+}
   
-  /** Tells the server to delete the task. */
-  function deleteTask(task) {
+/** Tells the server to delete the task. */
+function deleteTask(task) {
     const params = new URLSearchParams();
     params.append('id', task.id);
     fetch('/delete-task', {method: 'POST', body: params});
-  }
+}
 
 
-  
-  async function deleteImg() {
-    fetch('/delete-image', {method: 'POST', body: params});
-    const dateContainer = document.getElementById('delete-info');
-  }
-
-  function requestTranslation() {
+function requestTranslation() {
     const text = document.getElementById('text').value;
     const languageCode = document.getElementById('language').value;
 
@@ -91,10 +82,10 @@ async function showServerTime() {
     params.append('languageCode', languageCode);
 
     fetch('/translate', {
-      method: 'POST',
-      body: params
+        method: 'POST',
+        body: params
     }).then(response => response.text())
     .then((translatedMessage) => {
-      resultContainer.innerText = translatedMessage;
+        resultContainer.innerText = translatedMessage;
     });
   }
