@@ -17,7 +17,7 @@ public final class TextProcessorServlet extends HttpServlet {
     String text = getParameter(request, "text-input", "Rui Wu");
     // Respond with the result.
     response.setContentType("text/html;");
-    response.getWriter().println("Hello, " + text + "!");
+    response.getWriter().println("Hello, " + text + ", Nice to meet you!");
   }
 
   /**
